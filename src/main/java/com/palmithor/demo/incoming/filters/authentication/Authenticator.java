@@ -1,5 +1,7 @@
 package com.palmithor.demo.incoming.filters.authentication;
 
+import com.palmithor.demo.incoming.filters.FilterUtil;
+
 import javax.ws.rs.container.ContainerRequestContext;
 
 public class Authenticator {

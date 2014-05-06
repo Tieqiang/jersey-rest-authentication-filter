@@ -2,6 +2,7 @@ package com.palmithor.demo.incoming.filters.authentication;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
 
 /**
@@ -13,7 +14,13 @@ import java.io.IOException;
 public class AuthenticationFilter implements ContainerRequestFilter {
 
     @Override
-    public void filter(ContainerRequestContext containerRequestContext) throws IOException {
-        Authenticator authenticator = new Authenticator(containerRequestContext);
+    public void filter(ContainerRequestContext requestContext) throws IOException {
+        Authenticator authenticator = new Authenticator(requestContext);
+        final AuthenticationResult authenticationResult = authenticator.authenticate();
+        if (!authenticationResult.isSuccess()) {
+            requestContext.abortWith(
+                    Response.status(Response.Status.UNAUTHORIZED).build()
+            );
+        }
     }
 }
