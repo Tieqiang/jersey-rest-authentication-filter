@@ -12,12 +12,12 @@ public class AuthorizationParameters {
 
     private static final String SEP = "&";
 
-    public static final String CONSUMER_KEY = "hp_consumer_key";
-    public static final String SIGNATURE_KEY = "hp_auth_signature";
-    public static final String TIMESTAMP_KEY = "hp_auth_timestamp";
-    public static final String NONCE_KEY = "hp_auth_nonce";
-    public static final String VERSION_KEY = "hp_auth_version";
-    public static final String SIGNATURE_METHOD_KEY = "hp_auth_signature_method";
+    public static final String CONSUMER_KEY = "consumer_key";
+    public static final String SIGNATURE_KEY = "auth_signature";
+    public static final String TIMESTAMP_KEY = "auth_timestamp";
+    public static final String NONCE_KEY = "auth_nonce";
+    public static final String VERSION_KEY = "auth_version";
+    public static final String SIGNATURE_METHOD_KEY = "auth_signature_method";
     public static final String HMAC_SHA1 = "HmacSHA1";
 
     private final String consumer;
